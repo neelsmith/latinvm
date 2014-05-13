@@ -31,5 +31,8 @@ by running the "refresh" script:
 The webapp is served on port 8080 on the virtual machine, and forwarded to port 8888 on host, so you can point 
 a browser on your regular host comuter at: `http://localhost:8888/citeservlet/`
 
+## Further details ##
+
+The refresh script builds an RDF graph of all data in the archive, and serves it from a SPARQL endpoint (fuseki).  This service is on port 3030 on the virtual machine, and is forwarded to port 3333 on the host machine.  If you would like to experiment directly with the SPARQL endpoint, point a browser or other SPARQL client at http://localhost:3333/
 
 
