@@ -42,6 +42,7 @@ else
     $GIT clone https://github.com/cite-architecture/citeservlet.git
 fi
 # With everything up to date, then:
+echo All files up date.  Now building TTL.
 # 1. build TTL
 cd /vagrant/citemgr
 echo Building project RDF graph.
@@ -49,6 +50,7 @@ echo This can take a couple of minutes.
 echo ""
 $GRADLE clean && $GRADLE -Pconf=/vagrant/sparql/citemgr-conf.gradle ttl
 /bin/cp /vagrant/citemgr/build/ttl/all.ttl /vagrant/sparql
+echo TTL build.  Now loading into fuseki.
 # 2. load TTL into fuseki
 echo "Loading new data into RDF server."
 if [ -d "/vagrant/sparql/tdbs" ]; then
@@ -56,7 +58,9 @@ if [ -d "/vagrant/sparql/tdbs" ]; then
 fi
 /bin/mkdir /vagrant/sparql/tdbs
 /vagrant/jena/bin/tdbloader2 -loc /vagrant/sparql/tdbs /vagrant/sparql/all.ttl
+echo Loaded into fuseki. Now starting servlet.
 # 3. start servlet
 cd /vagrant/citeservlet
 echo Starting servlet.
 $GRADLE clean && $GRADLE   -Pconf=/vagrant/latinsrcs/confs/localconf.gradle   -Plinks=/vagrant/latinsrcs/confs/locallinks.gradle   -Pcustom=/vagrant/latinsrcs/servletoverlay/ jettyRunWar
+echo Finished everything:  servlet running.
