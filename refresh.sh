@@ -71,4 +71,4 @@ fi
 # 3. start servlet
 cd /vagrant/citeservlet
 echo Starting servlet.
-$GRADLE clean && $GRADLE   -Pconf=/vagrant/latinsrcs/confs/localconf.gradle   -Plinks=/vagrant/latinsrcs/confs/locallinks.gradle   -Pcustom=/vagrant/latinsrcs/servlet/ jettyRunWar
+$GRADLE clean && $GRADLE   -Pconf=/vagrant/latinsrcs/confs/localconf.gradle   -Plinks=/vagrant/latinsrcs/confs/locallinks.gradle   -Pcustom=/vagrant/latinsrcs/servletoverlay/ jettyRunWar
