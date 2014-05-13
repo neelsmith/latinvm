@@ -15,7 +15,7 @@ GRADLE=`which gradle`
 if [ -d "/vagrant/latinsrcs" ]; then
     echo "Checking archive for updates"
     # Control will enter here if $DIRECTORY exists.
-    cd /vagrant/latinsrcsx
+    cd /vagrant/latinsrcs
     $GIT pull
 else
     echo "Installing phoros archive"
