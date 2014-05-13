@@ -9,7 +9,7 @@ echo Will use gradle from $GRADLE
 # 2. citemgr
 # 3. citeservlet
 # Phoros archive:
-if [ -d "/vagrant/latinsrcs" ]
+if [ test -d "/vagrant/latinsrcs" ]
 then
     echo "Checking archive for updates"
     cd /vagrant/latinsrcs
