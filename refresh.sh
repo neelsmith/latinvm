@@ -66,7 +66,7 @@ $GRADLE clean && $GRADLE -Pconf=/vagrant/sparql/citemgr-conf.gradle ttl
 
 # 2. load TTL into fuseki
 echo "Loading new data into RDF server."
-if [ -d /vagrant/sparql/tdbs ]; then
+if [ -d "/vagrant/sparql/tdbs" ]; then
     /bin/rm -rf /vagrant/sparql/tdbs
 fi
 /bin/mkdir /vagrant/sparql/tdbs
