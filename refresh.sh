@@ -6,6 +6,10 @@ echo Starting the latinsources servlet
 GIT=`which git`
 GRADLE=`which gradle`
 
+echo Will use git from $GIT
+echo Will use gradle from $GRADLE
+
+
 # What we need:
 # 1. the latinsrcs archive.
 # 2. citemgr
